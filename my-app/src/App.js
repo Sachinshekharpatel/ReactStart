@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import ExpenseItem from './components/expenseitem';
+
 function App() {
   return (
     <div className="App">
@@ -17,10 +19,7 @@ function App() {
         >
           Learn React with Sachin
         </a>
-        <h3>Expense Tracker</h3>
-         <p>Food 10 Rs</p>
-         <p>Petrol 100 Rs</p>
-         <p>Movies 200 Rs</p>
+        <ExpenseItem></ExpenseItem>
       </header>
     </div>
   );
