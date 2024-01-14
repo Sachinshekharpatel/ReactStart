@@ -12,7 +12,8 @@ function App() {
       date: new Date(2020, 7, 14),
       location: "one",
     },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12), location: "two", },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2022, 2, 2), location: "two", },
+    
     {
       id: 'e3',
       title: 'Car Insurance',
@@ -26,6 +27,13 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
       location: "four",
+    },
+    {
+      id: 'e5',
+      title: 'New Laptop',
+      amount: 45009,
+      date: new Date(2023, 9, 10),
+      location: "Five",
     },
   ];
 
@@ -47,7 +55,7 @@ function App() {
         <h3>Expense Tracker</h3>
 
         {expenses.map((expense, index) => (
-          <ExpenseItem title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}></ExpenseItem>
+          <ExpenseItem title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
         ))}
 
       </header>
