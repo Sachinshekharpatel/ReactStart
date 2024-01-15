@@ -1,8 +1,9 @@
 import './expenseitem.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetail from './ExpenseDetail';
+// import Card from './card'; I hide this because i  am not able to do css on card part 
 
-function ExpenseItem(props){
+let ExpenseItem =(props) =>{
 
     // let date1 = new Date(2024, 0, 10); 
     // let name = "Food";

@@ -1,6 +1,6 @@
 import './ExpenseDate.css';
 
-function ExpenseDetail(props){
+let ExpenseDetail = (props) =>{
     let title = props.title
     let amount =  props.amount;
     let location = props.location;
