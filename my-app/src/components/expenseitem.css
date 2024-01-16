@@ -1,3 +1,20 @@
+.Formdiv {
+  
+    display: flex;
+    /* width : 800px; */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    background-color: #4b4b4b;
+  
+}
+.Formdiv input {
+  margin-left: 10px;
+  margin-right : 10px;
+}
 .expense-item {
     display: flex;
     /* width : 800px; */
