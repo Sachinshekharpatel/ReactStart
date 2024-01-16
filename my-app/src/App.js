@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import ExpenseItem from './components/expenseitem';
+import ExpenseForm from './components/ExpenseForm';
 
 let App = () => {
   let expenses = [
@@ -52,8 +53,9 @@ let App = () => {
         >
           Learn React with Sachin
         </a>
+        <ExpenseForm></ExpenseForm>
         <h3>Expense Tracker</h3>
-
+          
         {expenses.map((expense, index) => (
           <ExpenseItem title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
         ))}
