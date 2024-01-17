@@ -1,6 +1,7 @@
 function ExpenseFilter (props){
    const dropdownChangeHandler =(e)=>{
-      props.onChangeFilter(e.prevent.value)
+      props.onChangeFilter(e.target.value)
+    console.log(e.target.value)
    }
 
   return (

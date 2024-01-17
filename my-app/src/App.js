@@ -11,7 +11,7 @@ let App = () => {
       id: 'e1',
       title: 'Toilet Paper',
       amount: 94.12,
-      date: new Date(2020, 7, 14),
+      date: new Date(2024, 7, 14),
       location: "one",
     },
     { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2022, 2, 2), location: "two", },
@@ -45,12 +45,17 @@ let App = () => {
    const y = [...expenses, expense]
     setExpenses(y);
   };
-  const [filteredYear ,setFilteredyear] = useState('2023') ;
-  const filterChangehandler = (selecterYear)=>{
-     setFilteredyear(selecterYear)
+
+  const [filteredYear ,setFilteredyear] = useState('2024') ;
+  const filterChangehandler = (selectedYear)=>{
+    console.log(selectedYear,filteredYear);
+     setFilteredyear(selectedYear)
   }
-
-
+  const filteredexpenses = expenses.filter((expense) => {
+   const y = expense.date.getFullYear().toString()
+    return y === filteredYear;
+  });
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -68,8 +73,8 @@ let App = () => {
         </a>
         <NewExpense  onaddexpense = {addExpense}></NewExpense>
         <h3>Expense Tracker</h3>
-        <ExpenseFilter selected={filteredYear} onChnageFilter = {filterChangehandler}/>
-        {expenses.map((expense, index) => (
+        <ExpenseFilter selected={filteredYear} onChangeFilter = {filterChangehandler}/>
+        {filteredexpenses.map((expense, index) => (
           <ExpenseItem key = {index} title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
         ))}
 
