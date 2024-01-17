@@ -20,7 +20,7 @@ let App = () => {
       id: 'e3',
       title: 'Car Insurance',
       amount: 294.67,
-      date: new Date(2021, 2, 28),
+      date: new Date(2022, 2, 28),
       location: "three",
     },
     {
@@ -51,10 +51,23 @@ let App = () => {
     console.log(selectedYear,filteredYear);
      setFilteredyear(selectedYear)
   }
-  const filteredexpenses = expenses.filter((expense) => {
-   const y = expense.date.getFullYear().toString()
+  const filteredexpenses = expenses.filter((element) => {
+   const y = element.date.getFullYear().toString()
     return y === filteredYear;
   });
+ let para = <p>"Only single Expense here. Please add more...</p>
+ let lengthgreaterthan1 = filteredexpenses.map((expense, index) => (
+  <ExpenseItem key = {index} title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
+ ))
+  if(filteredexpenses.length>1){
+    lengthgreaterthan1 = filteredexpenses.map((expense, index) => (
+      <ExpenseItem key = {index} title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
+      
+     ))
+
+     para = "";
+    
+  }
   
   return (
     <div className="App">
@@ -74,9 +87,9 @@ let App = () => {
         <NewExpense  onaddexpense = {addExpense}></NewExpense>
         <h3>Expense Tracker</h3>
         <ExpenseFilter selected={filteredYear} onChangeFilter = {filterChangehandler}/>
-        {filteredexpenses.map((expense, index) => (
-          <ExpenseItem key = {index} title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
-        ))}
+        {lengthgreaterthan1}
+        {para}
+        
 
       </header>
     </div>
