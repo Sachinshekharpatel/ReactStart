@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NewExpense from './components/NewExpense';
 import ExpenseItem from './components/expenseitem';
-// import ExpenseForm from './components/ExpenseForm';
+import ExpenseFilter from './components/ExpenseFilter';
 import React, {useState} from 'react';
 let App = () => {
 
@@ -42,9 +42,14 @@ let App = () => {
 
     
  const addExpense = (expense) => {
-   let y = [...expenses, expense]
+   const y = [...expenses, expense]
     setExpenses(y);
   };
+  const [filteredYear ,setFilteredyear] = useState('2023') ;
+  const filterChangehandler = (selecterYear)=>{
+     setFilteredyear(selecterYear)
+  }
+
 
   return (
     <div className="App">
@@ -63,9 +68,9 @@ let App = () => {
         </a>
         <NewExpense  onaddexpense = {addExpense}></NewExpense>
         <h3>Expense Tracker</h3>
-          
+        <ExpenseFilter selected={filteredYear} onChnageFilter = {filterChangehandler}/>
         {expenses.map((expense, index) => (
-          <ExpenseItem title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
+          <ExpenseItem key = {index} title={expense.title} amount={expense.amount} location={expense.location} date={expense.date}/>
         ))}
 
       </header>

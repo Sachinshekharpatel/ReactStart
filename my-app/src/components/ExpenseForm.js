@@ -79,7 +79,7 @@ function ExpenseForm(props){
             <label>Amount : </label>
             <input type='number' value={amount} className='myamount' placeholder="Enter Amount" onChange={changeamount}></input>
             <label>Date : </label>
-            <input type='date' value={date} className='mydate' min='2000-01-01' max='2024-01-15' onChange={changedate}></input>
+            <input type='date' value={date} className='mydate' min='2020-01-01' max='2024-01-15' onChange={changedate}></input>
             <input type="submit" value="Submit"/>
         </form>
     </div>
