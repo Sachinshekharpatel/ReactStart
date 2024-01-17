@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
+import NewExpense from './components/NewExpense';
 import ExpenseItem from './components/expenseitem';
-import ExpenseForm from './components/ExpenseForm';
-
+// import ExpenseForm from './components/ExpenseForm';
+import React, {useState} from 'react';
 let App = () => {
-  let expenses = [
+
+  const [expenses, setExpenses] = useState([
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -36,7 +37,14 @@ let App = () => {
       date: new Date(2023, 9, 10),
       location: "Five",
     },
-  ];
+  ]);
+
+
+    
+ const addExpense = (expense) => {
+   let y = [...expenses, expense]
+    setExpenses(y);
+  };
 
   return (
     <div className="App">
@@ -53,7 +61,7 @@ let App = () => {
         >
           Learn React with Sachin
         </a>
-        <ExpenseForm></ExpenseForm>
+        <NewExpense  onaddexpense = {addExpense}></NewExpense>
         <h3>Expense Tracker</h3>
           
         {expenses.map((expense, index) => (
