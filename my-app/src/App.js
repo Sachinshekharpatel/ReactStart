@@ -48,7 +48,7 @@ let App = () => {
 
   const [filteredYear ,setFilteredyear] = useState('2024') ;
   const filterChangehandler = (selectedYear)=>{
-    console.log(selectedYear,filteredYear);
+    // console.log(selectedYear,filteredYear);
      setFilteredyear(selectedYear)
   }
   const filteredexpenses = expenses.filter((element) => {
