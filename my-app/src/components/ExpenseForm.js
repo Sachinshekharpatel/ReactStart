@@ -79,10 +79,10 @@ function ExpenseForm(props){
      setaddbtn(true);
   }
 
-  
+
     return (
     <div className="Formdiv">
-        <button type='submit' onClick={formOpen}>Click to open expense Form</button>
+        {!addbtn && (<button type='submit' onClick={formOpen}>Click to open expense Form</button>)}
         {addbtn ? (
             <form className="myform" onSubmit={Userdetail}>
                 <label>Title : </label>

@@ -4,6 +4,9 @@ import NewExpense from './components/NewExpense';
 import ExpenseItem from './components/expenseitem';
 import ExpenseFilter from './components/ExpenseFilter';
 import React, {useState} from 'react';
+import ExpensesChart from './components/ExpensesChart';
+import './Chart/ChartBar.css'
+import './Chart/Chart.css'
 let App = () => {
 
   const [expenses, setExpenses] = useState([
@@ -85,7 +88,9 @@ let App = () => {
           Learn React with Sachin
         </a>
         <NewExpense  onaddexpense = {addExpense}></NewExpense>
+        <ExpensesChart expenses={filteredexpenses}/>
         <h3>Expense Tracker</h3>
+        
         <ExpenseFilter selected={filteredYear} onChangeFilter = {filterChangehandler}/>
         {lengthgreaterthan1}
         {para}
